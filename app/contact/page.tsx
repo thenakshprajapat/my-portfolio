@@ -9,7 +9,7 @@ const socials = [
 		icon: <X size={20} />,
 		href: "https://X.com/nakshbuilds/",
 		label: "X",
-		handle: "@chronark_",
+		handle: "nakshbuilds",
 	},
 	{
 		icon: <Mail size={20} />,
