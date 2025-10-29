@@ -6,19 +6,19 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "nakshdev.tech",
+    template: "%s | nakshdev.tech",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Software Developer - Building innovative web applications",
   openGraph: {
-    title: "chronark.com",
+    title: "nakshdev.tech",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+      "Software Developer - Building innovative web applications",
+    url: "https://nakshdev.tech",
+    siteName: "nakshdev.tech",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://nakshdev.tech/og.png",
         width: 1920,
         height: 1080,
       },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "Naksh Prajapat",
     card: "summary_large_image",
   },
   icons: {
