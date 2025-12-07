@@ -35,9 +35,31 @@ export function LiveStatus() {
         const githubRes = await fetch('/api/github');
         const githubData = githubRes.ok ? await githubRes.json() : null;
 
+        // Fetch Time data from WorldTimeAPI
+        let timeString = "";
+        try {
+          const timeRes = await fetch('https://worldtimeapi.org/api/timezone/Asia/Kolkata');
+          const timeData = await timeRes.json();
+          const date = new Date(timeData.datetime);
+          timeString = date.toLocaleTimeString("en-US", { 
+            hour: "2-digit", 
+            minute: "2-digit",
+            timeZone: "Asia/Kolkata",
+            timeZoneName: "short"
+          });
+        } catch (e) {
+          console.error("Time API Error", e);
+          timeString = new Date().toLocaleTimeString("en-US", { 
+            hour: "2-digit", 
+            minute: "2-digit",
+            timeZone: "Asia/Kolkata",
+            timeZoneName: "short"
+          });
+        }
+
         setData({
-          time: new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", timeZoneName: "short" }),
-          location: "Mumbai, IN",
+          time: timeString,
+          location: "Jodhpur, Rajasthan",
           weather: "28°C Haze", // Still mock for now
           spotify: {
             isPlaying: true, // Still mock for now
@@ -51,8 +73,13 @@ export function LiveStatus() {
         console.error("Failed to fetch status data", error);
         // Fallback data
         setData({
-          time: new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", timeZoneName: "short" }),
-          location: "Mumbai, IN",
+          time: new Date().toLocaleTimeString("en-US", { 
+            hour: "2-digit", 
+            minute: "2-digit", 
+            timeZone: "Asia/Kolkata",
+            timeZoneName: "short" 
+          }),
+          location: "Jodhpur, Rajasthan",
           weather: "Unknown",
           spotify: { isPlaying: false, song: "", artist: "" },
           activity: "Visual Studio Code"
@@ -68,7 +95,12 @@ export function LiveStatus() {
     const interval = setInterval(() => {
       setData(prev => prev ? ({
         ...prev,
-        time: new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", timeZoneName: "short" })
+        time: new Date().toLocaleTimeString("en-US", { 
+            hour: "2-digit", 
+            minute: "2-digit", 
+            timeZone: "Asia/Kolkata",
+            timeZoneName: "short" 
+        })
       }) : null);
     }, 60000);
 
