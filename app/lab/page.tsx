@@ -2,7 +2,7 @@ import { FlaskConical } from "lucide-react";
 
 const EXPERIMENTS = [
   {
-    title: "E-COMMERCE PLATFORM",
+    title: "E-Commerce Platform",
     description: "Exploring the possibilities of e-commerce.",
     type: "Visual",
     status: "Active"
