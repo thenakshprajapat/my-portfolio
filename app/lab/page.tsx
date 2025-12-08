@@ -2,8 +2,8 @@ import { FlaskConical } from "lucide-react";
 
 const EXPERIMENTS = [
   {
-    title: "Generative Art Patterns",
-    description: "Exploring p5.js integration with React.",
+    title: "E-COMMERCE PLATFORM",
+    description: "Exploring the possibilities of e-commerce.",
     type: "Visual",
     status: "Active"
   },
